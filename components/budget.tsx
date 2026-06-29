@@ -2,9 +2,9 @@ import { Server, Code2, Users, TrendingUp, DollarSign, BarChart2, Percent, Badge
 
 export function Budget() {
   const budgetItems = [
-    { category: 'Hardware', amount: '$21.263.892', percentage: 17, details: '16 TPV + Servidores + Routers + UPS + Accesorios', icon: Server },
-    { category: 'Software', amount: '$8.4 — $22.7 M', percentage: 13, details: 'MySQL Enterprise + Debian + Desarrollo + Google AI', icon: Code2 },
-    { category: 'Recursos Humanos', amount: '$85.577.545', percentage: 70, details: '9 perfiles especializados durante el desarrollo', icon: Users },
+    { category: 'Hardware', amount: '$31.263.892', percentage: 20, details: '16 TPV + Servidores + Routers + UPS + Accesorios', icon: Server },
+    { category: 'Software', amount: '$8.4 — $22.7 M', percentage: 10, details: 'MySQL Enterprise + Debian + Desarrollo + Google AI', icon: Code2 },
+    { category: 'Recursos Humanos', amount: '$111.072.961', percentage: 70, details: '9 perfiles especializados (12 colaboradores) durante el desarrollo', icon: Users },
   ]
 
   const benefits = [
@@ -85,7 +85,7 @@ export function Budget() {
             </p>
           </div>
           <div className="rounded-2xl border border-primary/30 p-6 text-center">
-            <p className="text-4xl font-black text-primary leading-none">$115.2 — $129.5 M</p>
+            <p className="text-4xl font-black text-primary leading-none">$150.7 — $165.0 M</p>
             <p className="text-xs text-primary/40 mt-2">Pesos Argentinos</p>
           </div>
         </div>
