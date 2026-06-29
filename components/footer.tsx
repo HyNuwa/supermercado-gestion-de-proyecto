@@ -4,8 +4,8 @@ export function Footer() {
   const navLinks = [
     { label: 'Introduccion', href: '#intro' },
     { label: 'Requisitos', href: '#requirements' },
-    { label: 'Equipo', href: '#team' },
-    { label: 'Cronograma', href: '#timeline' },
+    { label: 'Equipo', href: '#members' },
+    { label: 'Cronograma', href: '#calendar' },
     { label: 'Presupuesto', href: '#budget' },
   ]
 
