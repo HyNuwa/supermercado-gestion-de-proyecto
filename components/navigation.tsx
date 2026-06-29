@@ -9,8 +9,8 @@ export function Navigation() {
   const navItems = [
     { label: 'Introduccion', href: '#intro' },
     { label: 'Requisitos', href: '#requirements' },
-    { label: 'Equipo', href: '#team' },
-    { label: 'Cronograma', href: '#timeline' },
+    { label: 'Casos de Uso', href: '#usecases' },
+    { label: 'Calendarización', href: '#calendar' },
     { label: 'Presupuesto', href: '#budget' },
   ]
 

@@ -1,4 +1,4 @@
-import { Scan, Lock, Database, Clock, Zap, Monitor, Users,ClipboardPlus,UserRoundCheck  } from 'lucide-react'
+import { Scan, Lock, Database, Clock, Zap, Monitor, Users, ClipboardPlus, UserRoundCheck, CreditCard } from 'lucide-react'
 
 export function Introduction() {
   const objectives = [
@@ -38,7 +38,9 @@ export function Introduction() {
     { label: 'Tiempo', description: 'Entrega en 1 año calendario', value: '12 meses', icon: Clock },
     { label: 'Rendimiento', description: 'Tiempo de respuesta por venta', value: '< 5 seg', icon: Zap },
     { label: 'Infraestructura', description: 'Reemplazo total de hardware obsoleto', value: '4 sedes', icon: Monitor },
-    { label: 'Usabilidad', description: 'Interfaces intuitivas para el personal', value: '16 cajeros', icon: Users },
+    { label: 'Cobro', description: 'Ingreso de pago con lectoras de codigo de barras (sin PosNET)', value: 'Sin PosNET', icon: CreditCard },
+    { label: 'Seguridad', description: 'Anulación de la venta requiere supervisor presencial', value: 'Supervisor', icon: Lock },
+    { label: 'Usabilidad', description: 'Interfaces de fácil aprendizaje para el personal', value: 'Fácil Uso', icon: Users },
   ]
 
   return (
@@ -94,7 +96,7 @@ export function Introduction() {
         </div>
 
         {/* Restrictions grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {restrictions.map((item, idx) => {
             const Icon = item.icon
             return (

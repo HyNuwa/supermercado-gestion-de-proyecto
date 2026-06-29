@@ -98,51 +98,6 @@ export function TeamStructure() {
           </div>
         </div>
 
-        {/* Org structure */}
-        <div className="mb-6 flex items-center gap-4">
-          <p className="text-sm font-medium text-primary whitespace-nowrap">Estructura Organizacional</p>
-          <div className="flex-1 border-t border-border" />
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4 mb-4">
-          {org.map((section, idx) => {
-            const Icon = section.icon
-            return (
-              <div key={idx} className="rounded-2xl border border-border bg-card overflow-hidden">
-                <div className="flex items-center gap-3 border-b border-border bg-muted/40 px-6 py-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon className="h-4 w-4 text-primary" />
-                  </div>
-                  <h4 className="text-sm font-semibold text-foreground">{section.title}</h4>
-                </div>
-                <div className="divide-y divide-border px-6">
-                  {section.roles.map((role, ridx) => (
-                    <div key={ridx} className="flex items-center justify-between py-3">
-                      <span className="text-sm text-foreground">{role.name}</span>
-                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-foreground text-xs font-semibold text-background">
-                        {role.count}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Summary strip */}
-        <div className="grid grid-cols-3 rounded-2xl border border-border bg-foreground overflow-hidden">
-          {[
-            { val: '1', label: 'Gerente General' },
-            { val: '3', label: 'Gerentes de Ventas' },
-            { val: '25', label: 'Personal Operativo' },
-          ].map(({ val, label }, i) => (
-            <div key={i} className={`py-6 text-center ${i < 2 ? 'border-r border-background/10' : ''}`}>
-              <p className="text-3xl font-black text-primary">{val}</p>
-              <p className="text-xs font-medium text-background/50 mt-1">{label}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )

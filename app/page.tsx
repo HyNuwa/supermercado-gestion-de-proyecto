@@ -2,9 +2,9 @@ import { Navigation } from '@/components/navigation'
 import { Hero } from '@/components/hero'
 import { Introduction } from '@/components/introduction'
 import { Requirements } from '@/components/requirements'
-import { TeamStructure } from '@/components/team-structure'
 import { Budget } from '@/components/budget'
-import { Timeline } from '@/components/timeline'
+import { UseCases } from '@/components/use-cases'
+import { CalendarSection } from '@/components/calendar'
 import { Footer } from '@/components/footer'
 
 export default function Page() {
@@ -14,8 +14,8 @@ export default function Page() {
       <Hero />
       <Introduction />
       <Requirements />
-      <TeamStructure />
-      <Timeline />
+      <CalendarSection />
+      <UseCases />
       <Budget />
       <Footer />
     </div>

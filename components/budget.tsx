@@ -2,9 +2,9 @@ import { Server, Code2, Users, TrendingUp, DollarSign, BarChart2, Percent, Badge
 
 export function Budget() {
   const budgetItems = [
-    { category: 'Hardware', amount: '$21.263.892', percentage: 49, details: '16 TPV + Servidores + Routers + UPS + Accesorios', icon: Server },
-    { category: 'Software', amount: '$8.4 — $22.7 M', percentage: 40, details: 'MySQL Enterprise + Debian + Desarrollo + Google AI', icon: Code2 },
-    { category: 'Recursos Humanos', amount: 'Variable', percentage: 11, details: '10 profesionales durante 52 semanas de proyecto', icon: Users },
+    { category: 'Hardware', amount: '$21.263.892', percentage: 17, details: '16 TPV + Servidores + Routers + UPS + Accesorios', icon: Server },
+    { category: 'Software', amount: '$8.4 — $22.7 M', percentage: 13, details: 'MySQL Enterprise + Debian + Desarrollo + Google AI', icon: Code2 },
+    { category: 'Recursos Humanos', amount: '$85.577.545', percentage: 70, details: '9 perfiles especializados durante el desarrollo', icon: Users },
   ]
 
   const benefits = [
@@ -85,40 +85,10 @@ export function Budget() {
             </p>
           </div>
           <div className="rounded-2xl border border-primary/30 p-6 text-center">
-            <p className="text-4xl font-black text-primary leading-none">$29.6 — $44 M</p>
+            <p className="text-4xl font-black text-primary leading-none">$115.2 — $129.5 M</p>
             <p className="text-xs text-primary/40 mt-2">Pesos Argentinos</p>
           </div>
         </div>
-
-        {/* Benefits header */}
-        <div className="mb-6 flex items-center gap-4">
-          <p className="text-sm font-medium text-primary whitespace-nowrap">Beneficios Economicos</p>
-          <div className="flex-1 border-t border-border" />
-        </div>
-
-        <div className="mb-4 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {benefits.map((b, idx) => {
-            const Icon = b.icon
-            return (
-              <div
-                key={idx}
-                className="rounded-2xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-sm transition-all"
-              >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 mb-4">
-                  <Icon className="h-4 w-4 text-primary" />
-                </div>
-                <p className="text-3xl font-black text-foreground leading-none mb-2">{b.stat}</p>
-                <h4 className="text-xs font-semibold text-foreground mb-1.5">{b.title}</h4>
-                <p className="text-xs leading-relaxed text-muted-foreground">{b.description}</p>
-              </div>
-            )
-          })}
-        </div>
-
-        <div className='flex items-center'>
-          <img src="modelo-cu.png" alt="modelo de caso de uso"/>
-        </div>
-
 
       </div>
     </section>

@@ -11,6 +11,14 @@ import {
   BrainCircuit,
   CircuitBoard,
   Cpu,
+  UserCog,
+  Search,
+  Code,
+  Layout,
+  Shield,
+  Database,
+  GraduationCap,
+  ClipboardCheck,
 } from 'lucide-react'
 
 export function Requirements() {
@@ -24,10 +32,22 @@ export function Requirements() {
   ]
 
   const software = [
-    { name: 'MySQL Enterprise', type: 'Base de Datos', purpose: 'Motor relacional para transacciones simultáneas de 4 sedes', price: '$7.5 — $22.7 M', icon: CircuitBoard },
+    { name: 'MySQL Enterprise', type: 'Base de Datos', purpose: 'Motor relacional para transacciones simultáneas de 4 sedes', price: '$7.5 — $22.7 M', icon: CircuitBoard, link: 'https://shop.oracle.com/apex/f?p=DSTORE:PRODUCT::::6:P6_LPI,P6_PROD_HIER_ID:60720318189220530576677,58095029061520477171389' },
     { name: 'Debian Linux', type: 'Sistema Operativo', purpose: 'Plataforma estándar con soporte para periféricos de cobro', price: 'Libre', icon: Terminal },
     { name: 'Super Mayorista App', type: 'Desarrollo a Medida', purpose: 'Backend + Frontend bajo Proceso Unificado', price: 'A cotizar', icon: Code2 },
-    { name: 'Google AI Ultra', type: 'Suscripción IA', purpose: 'Automatización de tareas y productividad del equipo', price: '$195.000', icon: BrainCircuit },
+    { name: 'Google AI Ultra', type: 'Suscripción IA', purpose: 'Automatización de tareas y productividad del equipo', price: '$195.000', icon: BrainCircuit, link: 'https://one.google.com/ai?utm_source=antigravity&utm_campaign=argon_limit_reached&pli=1&g1_landing_page=75' },
+  ]
+
+  const humanResources = [
+    { icon: UserCog, role: 'Líder de Proyecto', rate: '$2.749.621,12', time: '10,5 meses', total: '$28.870.021,76' },
+    { icon: Search, role: 'Analista Funcional Senior', rate: '$1.991.622,80', time: '5 meses', total: '$9.958.114,00' },
+    { icon: Layout, role: 'Desarrollador Full Stack', rate: '$3.187.720,75', time: '3 meses', note: 'Implementación y mantenimiento', total: '$9.563.162,25' },
+    { icon: Code, role: 'Desarrollador Backend', rate: '$2.987.069,64', time: '2 meses', total: '$5.974.139,28' },
+    { icon: ClipboardCheck, role: 'Analista de Testing de Aplicaciones', rate: '$2.477.103,94', time: '3,5 meses', total: '$8.669.863,79' },
+    { icon: Network, role: 'Administrador de Redes y SO', rate: '$2.553.756,38', time: '1,75 meses', total: '$4.469.073,67' },
+    { icon: Database, role: 'Administrador de Bases de Datos (DBA)', rate: '$2.553.756,38', time: '3 meses', total: '$7.661.269,14' },
+    { icon: Shield, role: 'Especialista en Seguridad Informática', rate: '$3.163.471,39', time: '3 meses', total: '$9.490.414,17' },
+    { icon: GraduationCap, role: 'Capacitador Informático', rate: '$1.228.649,95', time: '0,75 meses', total: '$921.487,46' },
   ]
 
   return (
@@ -85,7 +105,7 @@ export function Requirements() {
         </div>
 
         {/* ── SOFTWARE ── */}
-        <div>
+        <div className="mb-20">
           <div className="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <div>
               <p className="mb-3 text-sm font-medium text-primary">02 / Software</p>
@@ -105,29 +125,98 @@ export function Requirements() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-border bg-card p-8 hover:border-primary/30 hover:shadow-sm transition-all"
+                  className="group rounded-2xl border border-border bg-card p-8 hover:border-primary/30 hover:shadow-sm transition-all flex flex-col justify-between"
                 >
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                        <Icon className="h-5 w-5 text-primary" />
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                          <Icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+                          {item.type}
+                        </span>
                       </div>
-                      <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
-                        {item.type}
-                      </span>
+                      {!item.link && (
+                        <p className="text-sm font-semibold text-foreground">{item.price}</p>
+                      )}
                     </div>
-                    <p className="text-sm font-semibold text-foreground">{item.price}</p>
+                    <h3 className="text-base font-semibold text-foreground mb-2">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {item.purpose}
+                    </p>
                   </div>
-                  <h3 className="text-base font-semibold text-foreground mb-2">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {item.purpose}
-                  </p>
+                  {item.link && (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="block mt-6">
+                      <div className="flex items-center justify-between border-t border-border pt-4">
+                        <p className="text-sm font-semibold text-foreground">{item.price}</p>
+                        <ExternalLink className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                    </a>
+                  )}
                 </div>
               )
             })}
           </div>
+        </div>
+
+        {/* ── REQUERIMIENTO HUMANO ── */}
+        <div className="border-t border-border pt-20">
+          <div className="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+            <div>
+              <p className="mb-3 text-sm font-medium text-primary">02 / Recursos Humanos</p>
+              <h2 className="text-4xl sm:text-5xl font-black leading-[1.0] tracking-tight text-foreground">
+                Requerimiento Humano
+              </h2>
+            </div>
+            <div className="rounded-2xl border border-border bg-muted/40 p-5 text-center">
+              <p className="text-xs text-muted-foreground mb-1">Costo Estimado Desarrollo</p>
+              <p className="text-2xl font-black text-foreground">$85.577.545,52</p>
+            </div>
+          </div>
+
+          <div className="mb-10 max-w-4xl">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Considerando que el proyecto tiene una duración de <strong>46 semanas de desarrollo</strong>, más un margen de contingencia de <strong>2 semanas</strong> para la atención de imprevistos, el costo de mano de obra representa el componente más significativo del presupuesto. Tomando como referencia las remuneraciones establecidas por el <strong>CPCI (febrero de 2026)</strong> y el tiempo de participación de cada perfil dentro del proyecto, se obtiene la siguiente estimación:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {humanResources.map((item, idx) => {
+              const Icon = item.icon
+              return (
+                <div
+                  key={idx}
+                  className="group rounded-2xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-sm transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 mb-4">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground mb-1.5">
+                      {item.role}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mb-2">
+                      {item.rate} × {item.time}
+                    </p>
+                    {item.note && (
+                      <span className="inline-block rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground mb-2">
+                        {item.note}
+                      </span>
+                    )}
+                  </div>
+                  <div className="border-t border-border pt-3 mt-4 flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">Subtotal</span>
+                    <p className="text-sm font-bold text-foreground">{item.total}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+        
         </div>
       </div>
     </section>
