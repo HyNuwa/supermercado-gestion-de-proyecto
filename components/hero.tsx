@@ -18,10 +18,14 @@ export function Hero() {
           {/* Left column */}
           <div className="space-y-8">
             {/* Label */}
-            <div className="inline-flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span className="text-sm font-medium text-primary">
-                Informatica 2026 — Grupo 14
+            <div className="inline-flex items-center gap-2 flex-wrap">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm font-semibold tracking-wider text-primary uppercase">
+                Modelado Orientado a Objetos
+              </span>
+              <span className="text-muted-foreground text-xs">•</span>
+              <span className="text-sm font-medium text-muted-foreground">
+                Trabajo Final — Grupo 14
               </span>
             </div>
 
@@ -44,10 +48,10 @@ export function Hero() {
                 Ver Propuesta <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="#budget"
+                href="#members"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-7 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
               >
-                Ver Presupuesto
+                Ver Integrantes
               </a>
             </div>
 

@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/navigation'
 import { Hero } from '@/components/hero'
+import { GroupMembers } from '@/components/group-members'
 import { Introduction } from '@/components/introduction'
 import { Requirements } from '@/components/requirements'
 import { Budget } from '@/components/budget'
@@ -12,6 +13,7 @@ export default function Page() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
+      <GroupMembers />
       <Introduction />
       <Requirements />
       <CalendarSection />

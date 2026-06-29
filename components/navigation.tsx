@@ -7,6 +7,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
+    { label: 'Integrantes', href: '#members' },
     { label: 'Introduccion', href: '#intro' },
     { label: 'Requisitos', href: '#requirements' },
     { label: 'Casos de Uso', href: '#usecases' },
